@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class AuthController extends Controller
 {
@@ -47,13 +48,15 @@ class AuthController extends Controller
             'username' => 'required|unique:users|min:8|max:32',
             'password' => 'required|min:8|max:255',
             'password_confirmation' => 'required|same:password',
+            'role' => 'required',
         ]);
 
         User::create([
             'name' => $request->name,
             'email' => $request->email,
             'username' => $request->username,
-            'password' => Hash::make($request->password)
+            'password' => Hash::make($request->password),
+            'role' => $request->role,
         ]);
 
         return redirect()->route('login')

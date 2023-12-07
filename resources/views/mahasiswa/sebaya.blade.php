@@ -47,24 +47,16 @@
                         alt="profil-aurel">
                     <div class="card-body text-left">
                         <h5 class="card-title text-dark">Aurelya Ayu Ramadhani</h5>
-                        <p class="card-text">
-                        <ul style="padding-left: 0; color:#007BFF">
-                            <li style="list-style: none; margin-left: 0;">
-                                <i class="fa-solid fa-circle-check" style="margin-right: 5px;"></i> Relationship
-                            </li>
-                            <li style="list-style: none; margin-left: 0;">
-                                <i class="fa-solid fa-circle-check" style="margin-right: 5px;"></i> Kecemasan
-                            </li>
-                            <li style="list-style: none; margin-left: 0;">
-                                <i class="fa-solid fa-circle-check" style="margin-right: 5px;"></i> Pengembangan Diri
-                            </li>
-                        </ul>
+                        <p class="card-text text-gray-600" style="font-size: 15px;">
+                            <label for="keahlian">
+                                Bidang Keahlian:
+                            </label>
+                            <span>Kecemasan, Relationship, dan Pengembangan Diri</span>
                         </p>
                         <button type="button" class="btn btn-primary d-flex justify-content-center" data-bs-toggle="modal"
                             data-bs-target="#modal1">
                             Profil Lengkap
                         </button>
-
                     </div>
                 </div>
             </div>
@@ -84,13 +76,6 @@
                                         class="img-fluid rounded-circle" style="width: 150px; height: 150px;">
                                     <p>
                                     <h3><b class="text-dark">Aurelya Ayu Ramadhani</b></h3>
-                                    </p>
-                                    <p>
-                                        <span class="badge bg-primary rounded-pill text-white">Kecemasan</span>
-                                        <span class="badge bg-primary rounded-pill text-white">Stress</span>
-                                        <span class="badge bg-primary rounded-pill text-white">Percintaan</span>
-                                        <span class="badge bg-primary rounded-pill text-white">Keluarga</span> <br />
-                                        <span class="badge bg-primary rounded-pill text-white">+4 Lainnya</span>
                                     </p>
                                     <div>
                                         <strong>

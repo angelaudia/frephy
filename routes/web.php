@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Auth;
 use App\Models\question;
 use App\Models\answer;
@@ -80,8 +81,11 @@ Route::get('/beranda-a', function () {
 })->name('beranda-a')->middleware('auth');
 
 Route::get('/akun-konselor', function () {
-    return view('admin.akonselor')->middleware('auth');
-});
+    return view('admin.akonselor');
+})->name('akun-konselor')->middleware('auth');
 
+// profil mahasiswa
+Route::get('/profile-m', [ProfileController::class, 'index'])->name('profil-m');
 
+Route::patch('/profile-m/{id}', [ProfileController::class, 'update'])->name('profil-m.update');
 

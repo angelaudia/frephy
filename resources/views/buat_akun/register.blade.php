@@ -50,6 +50,29 @@
                                                 </div>
                                             @enderror
                                         </div>
+                                        <div class="form-group">
+                                            <div class="dropdown">
+                                                <button class="btn btn-primary dropdown-toggle btn-user btn-block"
+                                                    type="button" id="roleDropdown" data-toggle="dropdown"
+                                                    aria-haspopup="true" aria-expanded="false">
+                                                    Log In Sebagai
+                                                </button>
+                                                <div class="dropdown-menu w-100" aria-labelledby="roleDropdown">
+                                                    <a class="dropdown-item" href="#"
+                                                        data-value="mahasiswa">Mahasiswa</a>
+                                                    <a class="dropdown-item" href="#" data-value="sebaya">Konselor
+                                                        Sebaya</a>
+                                                    <a class="dropdown-item" href="#"
+                                                        data-value="profesional">Konselor Profesional</a>
+                                                </div>
+                                                <input type="hidden" id="role" name="role">
+                                            </div>
+                                            @error('role')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
                                         <div class="form-group row">
                                             <div class="col-sm-6 mb-3 mb-sm-0">
                                                 <input type="password"
@@ -94,7 +117,6 @@
 
     </div>
 
-
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
         $(document).ready(function() {
@@ -105,5 +127,4 @@
             });
         });
     </script>
-
 @endsection

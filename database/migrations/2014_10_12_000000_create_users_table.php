@@ -19,7 +19,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('username')->unique();
             $table->string('password');
-            $table->enum('role', ['mahasiswa', 'sebaya', 'profesional', 'admin'])->default('mahasiswa');
+            $table->enum('role', ['mahasiswa', 'sebaya', 'profesional'])->default('mahasiswa');
             $table-> text('keahlian')->nullable();
             $table-> text('deskripsi')->nullable();
             $table-> string('profil_img')->nullable();
