@@ -13,7 +13,7 @@
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
 
     <title>@yield('title')</title>
-    <link rel="icon" href="{!! asset('img/title.png') !!}"/>
+    <link rel="icon" href="{!! asset('img/title.png') !!}" />
 
     <!-- Custom fonts for this template-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -39,8 +39,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/beranda-m">
                 <div class="sidebar-brand-icon">
-                    <img src="{!! asset('img/icon.png') !!}" alt="icon"
-                    style="width: auto; height: 55px;">
+                    <img src="{!! asset('img/icon.png') !!}" alt="icon" style="width: auto; height: 55px;">
                 </div>
                 <div class="sidebar-brand-text mx-3">
                     <img src="{!! asset('img/log_o.png') !!}" alt="logo" class="img-fluid">
@@ -138,7 +137,7 @@
                                     Profile
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="/login" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
@@ -184,24 +183,28 @@
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-outline-danger" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-danger" href="/">Logout</a>
+    <form action="{{ url('logout') }}" method="POST">
+        @csrf
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-outline-danger" type="button" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-danger"> Logout</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </form>
+
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>

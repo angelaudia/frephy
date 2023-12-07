@@ -18,33 +18,65 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Register</h1>
                                     </div>
-                                    <form class="user">
+                                    <form action="{{ route('store') }}" method="POST" class="user">
+                                        @csrf
                                         <div class="form-group">
-                                            <input type="text" class="form-control form-control-user" id="username"
-                                                placeholder="Username">
+                                            <input type="text"
+                                                class="form-control form-control-user @error('name') is-invalid @enderror"
+                                                id="name" name="name" placeholder="Nama">
+                                            @error('name')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
                                         </div>
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user" id="email"
-                                                placeholder="Email">
+                                            <input type="text"
+                                                class="form-control form-control-user @error('username') is-invalid @enderror"
+                                                id="username" name="username" placeholder="Username">
+                                            @error('username')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control form-control-user" id="no_telp"
-                                                placeholder="No. Handphone">
+                                            <input type="email"
+                                                class="form-control form-control-user @error('email') is-invalid @enderror"
+                                                id="email" name="email" placeholder="Email">
+                                            @error('email')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
                                         </div>
-                                            
                                         <div class="form-group row">
                                             <div class="col-sm-6 mb-3 mb-sm-0">
-                                                <input type="password" class="form-control form-control-user" id="pw"
-                                                    placeholder="Password">
+                                                <input type="password"
+                                                    class="form-control form-control-user @error('password') is-invalid @enderror"
+                                                    id="password" name="password" placeholder="Password">
+                                                @error('password')
+                                                    <div class="invalid-feedback">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
                                             </div>
                                             <div class="col-sm-6">
-                                                <input type="password" class="form-control form-control-user" id="pwconfirm"
+                                                <input type="password"
+                                                    class="form-control form-control-user @error('password_confirmation') is-invalid @enderror"
+                                                    id="password_confirmation" name="password_confirmation"
                                                     placeholder="Konfirmasi Password">
+                                                @error('password_confirmation')
+                                                    <div class="invalid-feedback">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
                                             </div>
+
                                         </div>
-                                        <a href="/login" class="btn btn-warning btn-user btn-block">
+                                        <button class="btn btn-warning btn-user btn-block" type="submit">
                                             Register
-                                        </a>
+                                        </button>
                                         <hr>
                                     </form>
                                     <div class="text-center">

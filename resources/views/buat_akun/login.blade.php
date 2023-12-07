@@ -17,18 +17,31 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900">Selamat Datang!</h1>
                                     </div>
-                                    <form class="user mt-2">
+                                    @if (session()->has('error'))
+                                        <div class="alert alert-danger col-lg-10 mx-auto col-lg-5" role="alert">
+                                            {{ session('error') }}
+                                        </div>
+                                    @endif
+
+                                    @if (session()->has('success'))
+                                        <div class="alert alert-success col-lg-10 mx-auto col-lg-5" role="alert">
+                                            {{ session('success') }}
+                                        </div>
+                                    @endif
+
+                                    <form action="{{ route('authenticate') }}" method="POST" class="user mt-2">
+                                        @csrf
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user" id="email"
-                                                aria-describedby="emailHelp" placeholder="Masukkan Email Anda...">
+                                                name="email" aria-describedby="emailHelp"
+                                                placeholder="Masukkan Email Anda...">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user" id="password"
-                                                placeholder="Masukkan Password Anda...">
+                                                name="password" placeholder="Masukkan Password Anda...">
                                         </div>
-                                        <a href="/beranda-m" class="btn btn-warning btn-user btn-block">
-                                            Login
-                                        </a>
+                                        <button class="btn btn-warning btn-user btn-block" type="submit">Login</button>
+
                                         <hr>
                                     </form>
                                     <div class="text-center">

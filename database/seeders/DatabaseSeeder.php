@@ -24,37 +24,6 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        User::factory(5)->create();
-
-        User::create([
-            'name' => 'Angela',
-            'username' => 'Angel-mahasiswa',
-            'email' => 'angel@email.com',
-            'no_hp' => '123456789',
-            'password' => Hash::make('password'),
-            'role' => 'mahasiswa',
-        ]);
-
-        User::create([
-            'name' => 'Aurel',
-            'username' => 'aurel-konselorSebaya',
-            'password' => Hash::make('password'),
-            'email' => 'aurel@email.com',
-            'no_hp' => '987654321',
-            'role' => 'sebaya',
-            'keahlian' => 'kecemasan',
-            'deskripsi' => ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae perferendis quaerat ullam?',
-        ]);
-
-        User::create([
-            'name' => 'Dina',
-            'username' => 'dina-admin',
-            'password' => Hash::make('password'),
-            'email' => 'dina@email.com',
-            'no_hp' => '456789902',
-            'role' => 'admin',
-        ]);
-
-
+        
     }
 }
